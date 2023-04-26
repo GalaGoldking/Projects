@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #020307;
+    color: white;
+}
+.btn{
+    padding: 11px 22px;
+    background-color: #ff2c1f;
+    color: white;
+    font-weight: 400;
+    border-radius: 8px;
+    transition: 0.1s linear;
+    border: #ff2c1f;
+}
+.btn:hover{
+    background-color: #202020;
+    transition: 0.2s;
+}
+.card-body{
+    margin: 0 0;
+}
+.card-header{
+    margin: 0 0 ;
+    background-color: #020307;
+    text-align: center;
+}
+.card{
+    border: 1px solid black;
+}
