@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASCH</title>
     <link rel="shortcut icon" type="image/png" href="projimages/icon.png">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" crossorigin="use-credentials">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
+<!--Snippets: login page, Pill navigation, slideshow-->
 <body class="index">
     <header>
             <a class="navbar-brand" href="#home"><i class="fa-solid fa-clapperboard"></i>ASCH</a>
@@ -28,12 +30,46 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#aboutus">About Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Contact.html">Contact Us</a>
-                </li>
               </ul>
-                <a href="signup.html" class="btn">Sign Up</a>
-                
+                <div>
+                    <button onclick="document.getElementById('id01').style.display='block'" class="btn">Login</button>
+                    <div id="id01" class="modal">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <form class="modal-content animate" action="/action_page.php">
+                            <div class="container-log">
+                                <label for="uname"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <button type="submit" class="buttons btn">Login</button>
+                            </div>
+                            <div class="container-log" style="background-color: #f1f1f1">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn btn">Cancel</button>
+                                <a class="psw btn">Forgot password?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <button onclick="document.getElementById('id02').style.display='block'" class="btn">Sign Up</button>
+                    <div id="id02" class="modal">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <form class="modal-content animate" action="/action_page.php">
+                            <div class="container-log">
+                                <label for="uname"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <label for="mail"><b>Email</b></label>
+                                <input type="text" placeholder="Enter Your Email" name="mail" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <label for="cpsw"><b>Confirm Password</b></label>
+                                <input type="password" placeholder="Confirm Password" name="cpsw" required>
+                                <button type="submit" class="buttons btn">Sign Up</button>
+                            </div>
+                            <div class="container-log" style="background-color: #f1f1f1">
+                                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
     </header>
     <section class="home swiper" id="home">
         <!-- swiper -->
@@ -296,6 +332,11 @@
         </div>
     </section>
     <section class="footer">
+        <div>
+            <audio src="0511.mp3" id="Audio"></audio>
+        <button id="playButton" class="btn">Play Audio</button>
+        <button id="stopButton" class="btn">Stop Audio</button>
+        </div>
         <a href="#" class="navbar-brand">
             <i class="fa-solid fa-clapperboard"></i>ASCH
         </a>
@@ -310,6 +351,6 @@
     <script src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/6cf464eba0.js" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </body>
 </html>

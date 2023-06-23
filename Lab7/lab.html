@@ -1,0 +1,334 @@
+<html><head>
+    <title>JQuery Experiments</title>
+    
+    <!-- The title says it all.  A page that gives us the opportunity to experiment with JQuery -->
+    
+    <!-- Load the style sheet -->
+    <link rel="stylesheet" type="text/css" href="lab.css">
+    
+    <!-- Load JQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"> </script>
+    
+    <!-- Our Script -->
+    <script type="text/javascript">
+    <!--
+    /*
+    Exercise 1
+    $(document).ready(function() {
+      $('button').click(function () {
+        alert ($(this).text());
+      });
+    });*/
+
+    //Exercise 2
+    $(document).ready(function() {
+      $('#quotes').click(function () {
+        $('.poem p').css("background-color", "yellow")
+      });
+    });
+    $(document).ready(function() {
+      $('#unhighlight').click(function () {
+        $('.poem p').css("background-color", "")
+      });
+    });
+    $(document).ready(function() {
+      $('#unhighlight').click(function () {
+        $('.poem q').css("background-color", "")
+      });
+    });
+    $(document).ready(function() {
+      $('#alines').click(function () {
+        $('.poem q').css("background-color", "yellow")
+      });
+    });
+
+    // Exercise 3
+    $(document).ready(function() {
+      $('button').click(function () {
+        $('.log:first').append($(this).text()+' ');
+      });
+    });
+
+    //Exercise 4
+    $(document).ready(function() {
+      $('#hidepoem').click(function () {
+        $('.poem').css("display", "none")
+      });
+    });
+    $(document).ready(function() {
+      $('#showpoem').click(function () {
+        $('.poem').css("display", "initial")
+      });
+    });
+
+    //Exercise 5
+    $(document).ready(function() {
+        function days(className1, className2, className3){
+            var highlight = '.' + className1;
+            var unhighlight1 = '.' + className2;
+            var unhighlight2 = '.' + className3;
+            $(unhighlight1 + ',' + unhighlight2).css("background-color", "")
+            $(highlight).css("background-color", "yellow")
+        }
+        $('#Education').click(function () {
+        days('Education', 'Miscellaneous', 'Party')
+      });
+      $('#Miscellaneous').click(function () {
+        days('Miscellaneous', 'Education', 'Party')
+      });
+      $('#Party').click(function () {
+        days('Party', 'Miscellaneous', 'Education')
+      });
+    })
+
+    //Exercise 6
+    $(document).ready(function() {
+      $('#tag').click(function () {
+        var selectDate = $('#date').val();
+        var selectCategory = $('#category').val();
+
+        $('#dec' + selectDate).addClass(selectCategory);
+      });
+    });
+
+    //Exercise 7
+    $(document).ready(function() {
+        var tags
+        $('td').mouseenter(function() {
+        $(this).css('background-color', 'yellow');
+        tags = $(this).attr('class')
+        $(this).append(tags)
+    });
+        $('td').mouseleave(function() {
+            $(this).css('background-color', '');
+            $(this).text($(this).text().replace(tags, ''));
+        });
+    });
+
+    //Exercise 8
+    $(document).ready(function() {
+        $('#select').click(function () {
+            var selected = $('#selector').val();
+            var selectedElements = $(selected)
+
+            selectedElements.css('background-color', 'yellow')
+      });
+    });
+    $(document).ready(function() {
+        $('#unselect').click(function () {
+            $('*').css('background-color', '')
+        })
+    });
+    $(document).ready(function() {
+        $('#hide').click(function () {
+            var selected = $('#selector').val();
+            var selectedElements = $(selected)
+
+            selectedElements.css('display', 'none')
+        })
+    });
+    $(document).ready(function() {
+        $('#show').click(function () {
+            var selected = $('#selector').val();
+            var selectedElements = $(selected)
+
+            selectedElements.css('display', 'initial')
+        })
+    })
+
+
+    </script>
+    </head>
+    <body>
+    
+    <div class="introduction">
+    <p>
+      This page is intended to provide a variety of types of elements for experiments in JQuery, CSS, and
+      JavaScript.
+    </p>
+    
+    <p>
+      The tasks to do on this page are described in a <a href="http://www.cs.grinnell.edu/~rebelsky/Courses/CSC325/Labs/jquery-lab.html">corresponding laboratory</a>.
+    </p>
+    </div>
+    
+    <hr width="50%">
+    
+    <p class="log">
+    </p>
+    <p class="log">
+    </p>
+    <p class="log">
+    </p>
+
+    
+    <hr width="50%">
+    
+    <div id="buttonSet1">
+    <p>
+    <button type="button" id="quotes">Hightlight Quotes</button>
+    <button type="button" id="alines">Highlight Alternating Lines</button>
+    <button type="button" id="unhighlight">Unhighlight</button>
+    </p>
+    <p></p>
+    <button type="button" id="hidepoem">Hide Poem</button>
+    <button type="button" id="showpoem">Show Poem</button>
+    <p></p>
+    </div>
+    
+    <div class="poem">
+    <p>Twas brillig and the slithy toves did gyre and gimble in the wabe.  All mimsy were the borogoves and the mome raths outgrabe.</p>
+    <p><q>Beware the jabberwock my son, the jaws that bite, the claws that catch.  Beware the jubjub bird and shun the frumious bandersnatch.</q></p>
+    <p>He took his vorpal sword in hand.  Long time the manxome foe he sought.  So rested he by the tumtum tree and stood awhile in thought.</p>
+    <p>And while in uffish thought he stood, the jabberwock with eyes of flame came whiffling through the tulgey wood and burbled as it came.</p>
+    <p>One two.  One two.  And through and through the vorpal blade when snicker-snack.  He left it dead and with its head, he went galumphing back.</p>
+    <p><q>And hast thou slain the jabberwock?  Come to my arms by beamish boy.  Oh frabjuous day.  Callou!  Callay!</q> He chortled in his joy.</p>
+    <p>Twas brillig and the slithy toves did gyre and gimble in the wabe.  All mimsy were the borogoves and the mome raths outgrabe.</p>
+    </div>
+    
+    <hr width="50%">
+    
+    <div class="calendar">
+    
+    <table border="1">
+      <tbody><tr>
+        <th>S</th> <th>M</th> <th>T</th> <th>W</th> <th>T</th> <th>F</th> <th>S</th>
+      </tr>
+      <tr align="right">
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td id="dec1">1</td>
+        <td id="dec2">2</td>
+        <td class="Education" id="dec3">3</td>
+        <td class="Miscellaneous" id="dec4">4</td>
+      </tr>
+      <tr align="right">
+        <td id="dec5">5</td>
+        <td id="dec6" class="Education">6</td>
+        <td id="dec7" class="Education Miscellaneous">7</td>
+        <td id="dec8">8</td>
+        <td id="dec9">9</td>
+        <td id="dec10">10</td>
+        <td id="dec11">11</td>
+      </tr>
+      <tr align="right">
+        <td id="dec12">12</td>
+        <td id="dec13">13</td>
+        <td id="dec14">14</td>
+        <td id="dec15" class="Education">15</td>
+        <td id="dec16">16</td>
+        <td id="dec17">17</td>
+        <td id="dec18">18</td>
+      </tr>
+      <tr align="right">
+        <td id="dec19">19</td>
+        <td id="dec20">20</td>
+        <td id="dec21">21</td>
+        <td id="dec22">22</td>
+        <td id="dec23">23</td>
+        <td id="dec24">24</td>
+        <td id="dec25">25</td>
+      </tr>
+      <tr align="right">
+        <td id="dec26">26</td>
+        <td id="dec27">27</td>
+        <td id="dec28">28</td>
+        <td id="dec29">29</td>
+        <td id="dec30">30</td>
+        <td id="dec31">31</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody></table>
+    
+    <p>
+    <i>You can highlight tagged days by clicking one of the buttons below.</i>
+    </p>
+    
+    <div id="buttonSet3">
+    <button id="Education">Education</button>
+    <button id="Miscellaneous">Miscellaneous</button>
+    <button id="Party">Party</button>
+    </div>
+    
+    <p>
+    <i>You can tag days by entering a date, selecting a category, and clicking the <q>Tag</q> button.</i>
+    </p>
+    
+    <p>
+    <input type="text" id="date" size="2">
+    
+    <select id="category">
+    <option value="Education">Education
+    </option><option value="Miscellaneous">Miscellaneous
+    </option><option value="Party">Party
+    </option></select>
+    <button id="tag">Tag</button>
+    </p>
+    
+    </div>
+    
+    <hr width="50%">
+    
+    <p>
+      When you enter a selector in the field and click <b>Select</b>, the appropriate part of the page will be highlighted
+      (using the the <code>.border</code> class).
+    </p>
+    
+    <input type="text" id="selector">
+    
+    <button id="select">Select</button>
+    
+    <p>
+      We may want to unselect, too.
+    </p>
+    
+    <button id="unselect">Unselect All</button>
+    
+    <p>
+      Or hide/unhide.
+    </p>
+    
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    
+    <hr width="50%">
+    
+    <p>
+    A sample set of courses for the CS major at Grinnell.
+    </p>
+    
+    <div class="classes">
+    
+    <ul>
+      <li>
+        Introductory Sequence
+        <ul>
+          <li id="csc151">CSC 151</li>
+          <li id="csc161">CSC 161</li>
+          <li id="csc207">CSC 207</li>
+        </ul>
+      </li>
+      <li>
+        Mid-Level Courses
+        <ul>
+          <li id="csc211">CSC 211</li>
+          <li id="csc213">CSC 213</li>
+        </ul>
+      </li>
+      <li>
+        Upper-Level Courses
+        <ul>
+          <li id="csc301">CSC 301</li>
+          <li id="csc302">CSC 302</li>
+          <li id="csc325">CSC 325</li>
+          <li id="csc341">CSC 341</li>
+        </ul>
+      </li>
+    </ul>
+    
+    </div>
+    
+    
+    
+    </body></html>

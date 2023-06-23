@@ -1,0 +1,9 @@
+.highlighted { 
+    color: red;
+    background-color: black;
+  }
+  
+  .bordered {
+    border-style: bordered;
+    border-width: 1px;
+  }
